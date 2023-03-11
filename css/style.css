@@ -1,0 +1,45 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  padding-top: 16px;
+  width: 80%;
+  margin: auto;
+}
+
+.center {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+
+img {
+  width:100%;
+
+}
+
+h2, p{
+  text-align: center;
+}
+
+.text-logo{
+  font-family:Freestyle Script,Freestyle Script_MSFontService,sans-serif;
+  font-size: 55px;
+  text-align: center;
+  color: #CD840D;
+  letter-spacing: .44em;
+  line-height: 33px;
+}
+
+.text-logo-tag{
+font-size: 22px;
+font-weight:500;
+color: black;
+}
