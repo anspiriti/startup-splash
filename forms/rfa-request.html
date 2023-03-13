@@ -19,7 +19,7 @@
     <![endif]-->
     <div class="form-wrapper">
         <form id="rfa-form" class="w3-container w3-card-4 w3-light-gray"
-              method="POST" action="https://script.google.com/macros/s/AKfycbxmNpjtFCCl5MspyTasph_vc6s1W14yGIOkLpNRwkIVTFk-Vx-16ibtGjTYMbEBGsbp/exec">
+        method="POST" action="https://script.google.com/macros/s/AKfycbwLmWBS1Mts8CP6BeRpd_kumuHz_55k3-mLTh4iOBM/dev">
           <h3>Request for Application</h3>
           <div class="w3-container form-section-heading">
             <h4 class="w3-left">Organization/Businesss Information</h4>
@@ -65,6 +65,8 @@
               <option value="dig-content">Digital Content</option>
               <option value="prop-writing">Funding Proposal Writing</option>
             </select>
+            <label class="w3-left" for="proj-title">Project Title</label>
+            <input type="text" required id="proj-title" name="proj-title" placeholder="">
             <label class="w3-left" for="project-descript">Project Description</label>
               <textarea id="project-descript" name="project-descript" required 
               placeholder="What are you looking to accomplish with your project? What assistance is needed? Will this be a collaborative effort with other teams?"
@@ -78,21 +80,6 @@
     </div>
     
       <script src="" async defer>
-        window.addEventListener("load", function () {
-      const form = document.getElementById('rfa-form');
-        form.addEventListener("submit", function (e) {
-          e.preventDefault();
-        const data = new FormData(form);
-        const action = e.target.action;
-        fetch(action, {
-          method: 'POST',
-        body: data,
-        })
-          .then(() => {
-          alert("Thanks for helping out!");
-          })
-        });
-      });
     </script>
   </body>
 </html>
