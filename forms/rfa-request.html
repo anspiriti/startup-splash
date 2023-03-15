@@ -78,7 +78,155 @@
           <input type="submit" value="Submit">
         </form>
     </div>
-    
+    <!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html lang="en-US">
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Anspiriti-RFA</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href='https://fonts.googleapis.com/css?family=Vujahday Script' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="w3-black form-wrapper w3-container w3-round-xlarge">
+    <form class="w3-container w3-mobile" action="">
+      <div class="form-header w3-center">
+        <div class="w3-row">
+          <div class="title w3-red">
+            <h1>REQUEST FOR APPLICATION</h1>
+          </div>
+          <div class="w3-container">
+            <h2 class="text-logo logo-rotate">The Anspiriti<br>Project</h2>
+            <h4>Acclerating Humanity</h4>
+            <hr>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-top w3-cell-row">
+        <div class="form-top-Lpanel w3-cell w3-half w3-container">
+          <h3>Organization/Business Information</h3>
+          <label for="org-name">
+            <h4>Name</h4>
+          </label>
+          <input class="w3-input" type="text" required id="org-name" name="org-name">
+          <label for="org-web">
+            <h4>Website</h4>
+          </label>
+          <input class="w3-input" type="text" id="org-web" name="org-web">
+          <label required for="entity-type">
+            <h4>Business Entity Type</h4>
+          </label>
+          <select class="w3-input" id="entity-type" name="entity-type">
+            <option value="" disabled selected hidden>Select a type...</option>
+            <option value="npo">Non-Profit</option>
+            <option value="B-Corp">B-Corp</option>
+            <option value="for-profit">For Profit</option>
+          </select>
+        </div>
+        <div class="form-top-Rpanel w3-cell w3-half w3-container">
+          <h3>Point of Contact Information</h3>
+          <label for="poc-fname">
+            <h4>First Name</h4>
+          </label>
+          <input class="w3-input" type="text" required id="poc-fname" name="poc-fname">
+          <label for="poc-lname">
+            <h4>Last Name</h4>
+          </label>
+          <input class="w3-input" type="text" required id="poc-lname" name="poc-lname">
+          <label for="phone">
+            <h4>Phone</h4>
+          </label>
+          <input class="w3-input" type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone"
+            placeholder="123-456-7890">
+          <label for="email">
+            <h4>Email</h4>
+          </label>
+          <input class="w3-input" type="email" required id="email" name="email" placeholder="you@example.com">
+        </div>
+      </div>
+      <div class="w3-black form-bottom w3-container">
+        <br>
+        <hr>
+        <h3>Project Information</h3>
+        <div class="w3-cell-row">
+          <div class="w3-container w3-cell" style="width: 50%; padding-left: 0;">
+            <label for="proj-title">
+              <h4>Project Title</h4>
+            </label>
+            <input class="w3-input" type="text" required id="proj-title" name="proj-title" placeholder="">
+          </div>
+          <div class="w3-container w3-cell" style="width: 50%; padding-right: 0;">
+            <label for="project-type">
+              <h4>Project Type</h4>
+            </label>
+            <select class="w3-input" id="project-type" name="project-type">
+              <option value="" disabled selected hidden>Select a type...</option>
+              <option value="webDev">Web/App Development</option>
+              <option value="dig-content">Digital Content</option>
+              <option value="prop-writing">Funding Proposal Writing</option>
+            </select>
+          </div>
+        </div>
+        <div class="w3-row">
+          <label for="project-descript">
+            <h4>Project Description</h4>
+          </label>
+          <textarea rows="5" form="" class="w3-input" id="project-descript" name="project-descript" required
+            placeholder="What are you looking to accomplish with your project? What assistance is needed? Will this be a collaborative effort with other teams?"></textarea>
+          <label for="deadline">
+            <h4>Project Deadline</h4>
+          </label>
+          <input class="w3-input" type="date" required id="dline" name="deadline">
+        </div>
+        <br>
+        <br>
+        <div class="w3-red w3-container form-footer">
+          <h2>Thank You</h2>
+          <p>
+            Thank you for taking your time and offering this oppotunity. Your consideration
+            adds to the energy provided by others and you can be confident it will be used
+            efficiently to <i>Accelerate Humanity</i>.<br><br>
+          </p>
+          <p>
+            If all goes well, after submitting your request you will be presented with
+            a confirmation screen that will include two options. The first option allows you
+            to submit another RFA.<br><br>
+          </p>
+          <p>
+            The second option allows you to register to receive a future newsletter that
+            will include progress updates of The Anspiriti Project, as well as helpful
+            resources that will positively impact your wellbeing and the wellbeing of your
+            community. But first, lets get this RFA submitted.<br><br>
+          </p>
+          <div class="w3-right">
+            <button class="w3-btn w3-round-large w3-border">Submit</button>
+            <br>
+            <br>
+          </div>
+
+        </div>
+      </div>
+      <br>
+      <br>
+    </form>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <script src="" async defer></script>
+</body>
+
+</html>
       <script src="" async defer>
     </script>
   </body>
