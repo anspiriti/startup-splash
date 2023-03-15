@@ -3,86 +3,6 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>RFA Request</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body class="w3-mobile">
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    <div class="form-wrapper">
-        <form id="rfa-form" class="w3-container w3-card-4 w3-light-gray"
-        method="POST" action="https://script.google.com/macros/s/AKfycbwLmWBS1Mts8CP6BeRpd_kumuHz_55k3-mLTh4iOBM/dev">
-          <h3>Request for Application</h3>
-          <div class="w3-container form-section-heading">
-            <h4 class="w3-left">Organization/Businesss Information</h4>
-        </div>
-          <div class="w3-container">
-            <label class="w3-left" for="org-name">Name</label>
-            <input type="text" required id="org-name" name="org-name">
-            <label class="w3-left" for="org-name">Website</label>
-            <input type="text" id="entity-type" name="org-web">
-            <label class="w3-left" required for="entity-type">Business Entity Type</h5></label>
-            <select id="entity-type" name="entity-type">
-              <option value="" disabled selected hidden>Select a type...</option>
-              <option value="npo">Non-Profit</option>
-              <option value="B-Corp">B-Corp</option>
-              <option value="for-profit">For Profit</option>
-            </select>
-          </div>
-          
-          <div class="w3-container form-section-heading">
-          <h4 class="w3-left">Point of Contact Information</h4>
-          </div>
-          <div class="w3-container">
-            <label class="w3-left" for="poc">Name</label>
-            <input type="text" required id="poc" name="poc" placeholder="Name of Person to Contact..">
-            <div class="w3-container" style="padding: 0;">
-            <label class="w3-left" for="phone">Phone</label><br>
-            <input type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" name="phone" placeholder="123-456-7890">
-            </div>
-            <div class="w3-left w3-container" style="padding: 0;">
-            <label class="w3-left" for="email">Email</label><br>
-            <input type="email" required id="email" name="email" placeholder="you@example.com">
-            </div>
-          </div>
-
-          <div class="w3-container form-section-heading">
-          <h4 class="w3-left">Project Information</h4>
-          </div>
-          <div class="w3-container">
-            <label class="w3-left" for="project-type">Project Type</label>
-            <select id="project-type" name="project-type">
-              <option value="" disabled selected hidden>Select a type...</option>
-              <option value="webDev">Web/App Development</option>
-              <option value="dig-content">Digital Content</option>
-              <option value="prop-writing">Funding Proposal Writing</option>
-            </select>
-            <label class="w3-left" for="proj-title">Project Title</label>
-            <input type="text" required id="proj-title" name="proj-title" placeholder="">
-            <label class="w3-left" for="project-descript">Project Description</label>
-              <textarea id="project-descript" name="project-descript" required 
-              placeholder="What are you looking to accomplish with your project? What assistance is needed? Will this be a collaborative effort with other teams?"
-              ></textarea>
-              <label class="w3-left" for="deadline">Project Deadline</label><br><br>
-              <input type="date" required id="dline" name="deadline"><br>
-          </div>
-      
-          <input type="submit" value="Submit">
-        </form>
-    </div>
-    <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html lang="en-US">
 <head>
   
@@ -111,7 +31,8 @@
           </div>
         </div>
       </div>
-
+<form id="rfa-form" class="w3-container w3-card-4 w3-light-gray w3-border w3-round-large" method="POST"
+  action="https://script.google.com/macros/s/AKfycbwLmWBS1Mts8CP6BeRpd_kumuHz_55k3-mLTh4iOBM/dev">
       <div class="form-top w3-cell-row">
         <div class="form-top-Lpanel w3-cell w3-half w3-container">
           <h3>Organization/Business Information</h3>
@@ -226,8 +147,4 @@
     <script src="" async defer></script>
 </body>
 
-</html>
-      <script src="" async defer>
-    </script>
-  </body>
 </html>
