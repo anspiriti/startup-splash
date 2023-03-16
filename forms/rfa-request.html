@@ -4,28 +4,30 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Anspiriti-RFA</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-      <link href='https://fonts.googleapis.com/css?family=Vujahday Script' rel='stylesheet'>
-    <link rel="stylesheet" href="./css/style.css">
-  </head>
-  <body>
 
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Anspiriti-RFA</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href='https://fonts.googleapis.com/css?family=Vujahday Script' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="form-wrapper">
     <form id="rfa-form" class="w3-container w3-round-large" method="POST"
       action="https://script.google.com/macros/s/AKfycbwLmWBS1Mts8CP6BeRpd_kumuHz_55k3-mLTh4iOBM/dev">
-    
+
       <div class="w3-row" id="header">
         <div class="sticky w3-container w3-col s12 m12 l12 w3-center">
           <h2 class="text-logo logo-rotate">The Anspiriti<br>Project</h2>
           <h4>Acclerating Humanity</h4>
         </div>
 
-  
+
         <div class="w3-container w3-col s12 m12 l12 w3-center w3-red" id="title">
           <h1>REQUEST FOR APPLICATION</h1>
         </div>
@@ -34,59 +36,54 @@
           <div class="w3-container w3-col s12 m12 l12">
             <h4>Organization/Business Information</h4>
           </div>
-          <div class="w3-container w3-col s12 m12 l6 input-padding">
+          <div class="w3-container w3-col s12 m12 l12 input-padding">
             <label for="org-name"></label>
-            <input class="w3-input" type="text" required id="org-name" name="org-name" 
-            placeholder="Name of Org/Business">
+            <input class="w3-input" type="text" required id="org-name" name="org-name"
+              placeholder="Name of Org/Business">
           </div>
           <div class="w3-container w3-col s12 m6 l6 input-padding">
             <label for="org-web"> </label>
-            <input class="w3-input" type="text" id="org-web" name="org-web" 
-            placeholder="Website Address">
+            <input class="w3-input" type="text" id="org-web" name="org-web" placeholder="Website Address">
           </div>
           <div class="w3-container w3-col s12 m6 l6 input-padding">
             <label required for="entity-type"></label>
             <select class="w3-input" id="entity-type" name="entity-type">
-              <option w3-input value="" disabled selected hidden>Business Entity Type</option>
+              <option w3-input value="" disabled selected hidden>Business Entity</option>
               <option value="npo">Non-Profit</option>
               <option value="B-Corp">B-Corp</option>
               <option value="for-profit">For Profit</option>
             </select>
           </div>
         </div>
- 
+
         <div class="w3-container w3-col s12 m12 l6" id="poc-info">
           <div class="w3-container w3-col s12 m12 l12">
             <h4>Point of Contact Information</h4>
           </div>
           <div class="w3-container w3-col s12 m12 l12 input-padding">
             <label for="poc-role"></label>
-            <input class="w3-input" type="text" required id="poc-role" name="poc-role" 
-            placeholder="Position in Company">
+            <input class="w3-input" type="text" required id="poc-role" name="poc-role"
+              placeholder="Position in Company">
           </div>
           <div class="w3-container w3-col s6 m6 l6 input-padding">
             <label for="poc-fname"></label>
-            <input class="w3-input" type="text" required id="poc-fname" name="poc-fname" 
-            placeholder="First Name">
+            <input class="w3-input" type="text" required id="poc-fname" name="poc-fname" placeholder="First Name">
           </div>
           <div class="w3-container w3-col s6 m6 l6 input-padding">
             <label for="poc-lname"></label>
-            <input class="w3-input" type="text" required id="poc-lname" name="poc-lname" 
-            placeholder="Last Name">
+            <input class="w3-input" type="text" required id="poc-lname" name="poc-lname" placeholder="Last Name">
           </div>
           <div class="w3-container w3-col s6 m6 l6 input-padding">
             <label for="phone"></label>
-            <input class="w3-input" type="text" id="phone" name="phone"
-            placeholder="Phone#">
+            <input class="w3-input" type="text" id="phone" name="phone" placeholder="Phone#">
           </div>
           <div class="w3-container w3-col s6 m6 l6 input-padding">
             <label for="email"></label>
-            <input class="w3-input" type="email" required id="email" name="email" 
-            placeholder="Email">
+            <input class="w3-input" type="email" required id="email" name="email" placeholder="Email">
           </div>
         </div>
 
-        <div class="w3-container w3-col s12 m12 l6" id="project-info">
+        <div class="w3-container w3-col s12 m12 l12" id="project-info">
           <div class="w3-container w3-col s12 m12 l12">
             <h4>Project Information</h4>
           </div>
@@ -95,54 +92,57 @@
             <input class="w3-input" type="text" required id="proj-title" name="proj-title" placeholder="Project Title">
           </div>
           <div class="w3-container w3-col s12 m6 l6 input-padding">
-                <label for="project-type"></label>
-                <select class="w3-input" id="project-type" name="project-type">
-                  <option value="" disabled selected hidden>Project Type</option>
-                  <option value="webDev">Web/App Development</option>
-                  <option value="dig-content">Digital Content</option>
-                  <option value="prop-writing">Funding Proposal Writing</option>
-                </select>
+            <label for="project-type"></label>
+            <select class="w3-input" id="project-type" name="project-type">
+              <option value="" disabled selected hidden>Project Type</option>
+              <option value="webDev">Web/App Development</option>
+              <option value="dig-content">Digital Content</option>
+              <option value="prop-writing">Funding Proposal Writing</option>
+            </select>
           </div>
           <div class="w3-container w3-col s12 m6 l6 input-padding">
-                <label for="deadline"></label>
-                <input class="w3-input" type="text" onfocus="(this.type='date')" required id="deadline" name="deadline"
-                  placeholder="Project Deadline">
+            <label for="deadline"></label>
+            <input class="w3-input" type="text" onfocus="(this.type='date')" required id="deadline" name="deadline"
+              placeholder="Project Deadline">
           </div>
           <div class="w3-container w3-col s12 m12 l12 input-padding">
-              <label for="project-descript"></label>
-              <textarea rows="5" form="" class="w3-input" id="project-descript" name="project-descript" required
-                placeholder="Project Description: What are you looking to accomplish with your project? What assistance is needed? Will this be a collaborative effort with other teams?"></textarea>
+            <label for="project-descript"></label>
+            <textarea rows="5" form="" class="w3-input" id="project-descript" name="project-descript" required
+              placeholder="Project Description: What are you looking to accomplish with your project? What assistance is needed? Will this be a collaborative effort with other teams?"></textarea>
           </div>
         </div>
 
-        <div class="rfa-form-footer w3-container w3-col s12 m12 l2" id="rfa-form-footer">
-          <div class="rfa-form-footer-thank-you w3-container w3-col s12 m12 l12" id="rfa-form-footer-thank-you">
-              <h2 class="h2-footer-thank-you">Thank You</h2>
-              <p>
-                Thank you for taking your time to offer this oppotunity. Your consideration
-                adds to the energy provided by others and you can be confident it will be used
-                efficiently to <i>Accelerate Humanity</i>.<br><br>
-              </p>
-              <p>
-                If all goes well, after submitting your request you will be presented with
-                a confirmation screen that includes two options. The first option allows you
-                to submit another RFA.<br><br>
-              </p>
-              <p>
-                The second option allows you to register to receive a future newsletter that
-                will include progress updates of The Anspiriti Project, as well as helpful
-                resources that will positively impact your wellbeing and the wellbeing of your
-                community. But first, lets get this RFA submitted.
-              </p>
-          <div class="w3-right">
-            <br>
-            <button class="w3-btn w3-border w3-round-large button-footer">Submit</button><br>
-            <br>
+        <div class="rfa-form-footer w3-container w3-col s12 m12 l12">
+          <div class="rfa-form-footer-thank-you w3-container w3-col s12 m12 l12">
+            <h2 class="h2-footer-thank-you">Thank You</h2>
+            <p>
+              Thank you for taking your time to offer this oppotunity. Your consideration
+              adds to the energy provided by others and you can be confident it will be used
+              efficiently to <i>Accelerate Humanity</i>.<br><br>
+            </p>
+            <p>
+              If all goes well, after submitting your request you will be presented with
+              a confirmation screen that includes two options. The first option allows you
+              to submit another RFA.<br><br>
+            </p>
+            <p>
+              The second option allows you to register to receive a future newsletter that
+              will include progress updates of The Anspiriti Project, as well as helpful
+              resources that will positively impact your wellbeing and the wellbeing of your
+              community. But first, lets get this RFA submitted.
+            </p>
+            <div class="w3-right">
+              <br>
+              <button class="w3-btn w3-border w3-round-large button-footer">Submit</button><br>
+              <br>
+            </div>
           </div>
-        </div>
-        </form>
+          </div>
+    </form>
     <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    </body>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+  </div>
+</body>
+
 </html>
