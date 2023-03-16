@@ -1,12 +1,17 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
-body{
+body {
+  max-width: 900px;
   background-color: black;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  margin: auto;
 }
 
 .text-logo {
@@ -28,6 +33,7 @@ body{
 form {
   background-color: #0f0f19;
   opacity: .75;
+
 }
 
 .rfa-form-footer{
@@ -35,13 +41,13 @@ form {
   justify-content: center;
 }
 
-.rfa-form-footer-thank-you{
+.rfa-form-footer-thank-you {
   width: 100%;
   max-width: 48ch;
   color: whitesmoke
 }
 
-.h2-footer-thank-you{
+.h2-footer-thank-you {
   color: #e5a812;
 }
 
@@ -54,11 +60,11 @@ h4 {
 }
 
 
-textarea{
+textarea {
   resize: none;
 }
 
-.button-footer{
+.button-footer {
   color: #e5a812;
 }
 
