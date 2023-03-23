@@ -13,7 +13,7 @@ function hideScreenButtonChoiceNormalScreen() {
   document.getElementById('normal-screen-btn').style.visibility = 'hidden';
   document.getElementById('screen-mode-top-btn').style.border = '3px solid red';
   document.getElementById('screen-mode-top-btn').style.visibility = 'visible';
-}
+};
 
 function toggleFullscreen() {
   let elem = document.documentElement;
@@ -30,4 +30,4 @@ function toggleFullscreen() {
     document.exitFullscreen();
     document.getElementById('screen-mode-top-btn').style.border = '3px solid red';
   }
-}
+};
