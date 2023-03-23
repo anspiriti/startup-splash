@@ -1,77 +1,37 @@
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
-  max-width: 900px;
   background-color: black;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center;
-  margin: auto;
 }
 
-.text-logo {
-  padding-top: 2.2vh;
-  letter-spacing: 6px;
-  font-family: 'Vujahday Script';
-  color: #e5a812;
-  font-weight: bold;
-}
-
-.logo-rotate {
-  transform: rotate(-8deg);
-  -webkit-transform: rotate(-8deg);
-  -moz-transform: rotate(-8deg);
-  -ms-transform: rotate(-8deg);
-  -o-transform: rotate(-8deg);
-}
-
-form {
-  background-color: #0f0f19;
-  opacity: .75;
-
-}
-
-.rfa-form-footer{
-  display: flex;
-  justify-content: center;
-}
-
-.rfa-form-footer-thank-you {
+body{
+  position: absolute;
+  top: 33%;
   width: 100%;
-  max-width: 48ch;
-  color: whitesmoke
-}
-
-.h2-footer-thank-you {
-  color: #e5a812;
-}
-
-h4 {
+  text-align: center;
   color: whitesmoke;
 }
 
-.input-padding {
-  padding-bottom: 16px;
-}
-
-
-textarea {
-  resize: none;
-}
-
-.button-footer {
-  color: #e5a812;
-}
-
-div.sticky {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
+.text-logo {
+  font-family: Freestyle Script, Freestyle Script_MSFontService, sans-serif;
+  font-size: 55px;
   text-align: center;
-  background-color: #0f0f19;
+  color: #CD840D;
+  letter-spacing: .44em;
+  line-height: 33px;
+}
+
+.sub-logo{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  letter-spacing:normal;
+  line-height: normal;
+  font-size: .5em;
+  font-weight: 100;
+}
+
+.fullscreen-btn {
+  border: 3.8px solid  #CD840D;
+  color: whitesmoke
 }
