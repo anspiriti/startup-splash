@@ -1,35 +1,43 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link type="text/css" rel="stylesheet" href="./css/style.css">
-    <script type="text/javascript" src="./js/script.js" async defer></script>
-  </head>
-  <body>
-    <div class="w3-container w3-display-middle w3-center logo">
-        <div class="w3-row logo-margin">
-          <h1 class="w3-mobile text-logo">The Anspiriti Project</h1>
-        </div>
-        <div class="w3-row logo-margin">
-          <h2 class="w3-mobile sub-logo">Accelerating Humanity</h2>
-        </div>
-        <div class="w3-row logo-margin">
-        <p>
-          <input id="fullscreen-btn" class="w3-button w3-lar w3-round-xxlarge fullscreen-btn" type="button" value="Best In Fullscreen" onclick="toggleFullscreen();hideButton()">
-        </p>
-      </div>
-    </div>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-  </body>
-</html>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #0f0f19
+}
+
+body{
+  color: whitesmoke;
+}
+
+.logo{
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  text-align: center;
+}
+
+.logo-margin{
+  margin: 8px 0 8px 0;
+}
+
+.text-logo {
+  font-family: 'Caveat', cursive;
+  font-size:550%;
+  color: #CD840D;
+  line-height: 77%;
+  margin: 5px;
+}
+
+.sub-logo{
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 225%;
+  font-weight:lighter;
+  margin: 5px;
+}
+
+.fullscreen-btn {
+  border: 3.8px solid  #CD840D;
+  color: whitesmoke;
+  padding: 5.5px;
+}
