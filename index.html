@@ -18,6 +18,12 @@
     <script type="text/javascript" src="./js/script.js" async defer></script>
   </head>
   <body>
+    <div class="sticky w3-container screen-mode-top">
+      <div class="w3-row w3-display-topright">
+          <input id="screen-mode-top-btn" class="w3-button w3-small w3-round-xxlarge" type="button" value="Full Screen"
+            onclick="toggleFullscreen();">
+      </div>
+    </div>
     <div class="w3-display-middle w3-center logo">
         <div class="w3-row logo-margin">
           <h1 class="w3-mobile text-logo">The Anspiriti Project</h1>
@@ -26,9 +32,10 @@
           <h2 class="w3-mobile sub-logo">Accelerating Humanity</h2>
         </div>
         <div class="w3-row logo-margin">
-        <p>
-          <input id="fullscreen-btn" class="w3-button w3-lar w3-round-xxlarge fullscreen-btn" type="button" value="Best In Fullscreen" onclick="toggleFullscreen();hideButton()">
-        </p>
+          <input id="full-screen-btn" class="w3-button w3-large w3-round-xxlarge screen-btn" type="button" value="Full Screen"
+            onclick="toggleFullscreen();hideScreenButtonChoiceFullScreen()">
+          <input id="normal-screen-btn" class="w3-button w3-large w3-round-xxlarge screen-btn" type="button"
+            value="Normal Screen" onclick="hideScreenButtonChoiceNormalScreen()">
       </div>
     </div>
     <!--[if lt IE 7]>
