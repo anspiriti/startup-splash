@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  background-color: black;
+  background-color: #0f0f19
 }
 
 body{
@@ -17,11 +17,11 @@ body{
 }
 
 .logo-margin{
-  margin: 8px;
+  margin: 8px 0 8px 0;
 }
 
 .text-logo {
-  font-family: Freestyle Script, Freestyle Script_MSFontService, sans-serif;
+  font-family: 'Caveat', cursive;
   font-size:550%;
   color: #CD840D;
   line-height: 77%;
