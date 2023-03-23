@@ -21,6 +21,7 @@ function handleKeypress(event) {
 function hideScreenButtonChoiceFullScreen() {
   document.getElementById('full-screen-btn').style.visibility = 'hidden';
   document.getElementById('normal-screen-btn').style.visibility = 'hidden';
+  document.getElementById('screen-mode-top-btn').style.backgroundColor = 'transparent'
   document.getElementById('screen-mode-top-btn').style.visibility = 'visible';
   };
   
@@ -29,6 +30,7 @@ function hideScreenButtonChoiceNormalScreen() {
   document.getElementById('full-screen-btn').style.visibility = 'hidden';
   document.getElementById('normal-screen-btn').style.visibility = 'hidden';
   document.getElementById('screen-mode-top-btn').style.border = '3px solid red';
+  document.getElementById('screen-mode-top-btn').style.backgroundColor = 'transparent'
   document.getElementById('screen-mode-top-btn').style.visibility = 'visible';
 };
 
@@ -37,6 +39,7 @@ function toggleFullscreen() {
 
   if (!document.fullscreenElement) {
     document.getElementById('screen-mode-top-btn').style.border = '3px solid green';
+    document.getElementById('screen-mode-top-btn').style.backgroundColor = 'transparent'
     elem.requestFullscreen().catch((err) => {
       alert(
         `Error attempting to enable fullscreen mode: ${err.message} (${err.name})`
@@ -46,5 +49,6 @@ function toggleFullscreen() {
   } else {
     document.exitFullscreen();
     document.getElementById('screen-mode-top-btn').style.border = '3px solid red';
+    document.getElementById('screen-mode-top-btn').style.backgroundColor ='transparent'
   }
 };
