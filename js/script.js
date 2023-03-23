@@ -1,38 +1,33 @@
 // Any copyright is dedicated to the Public Domain.
 // http://creativecommons.org/publicdomain/zero/1.0/
 
-window.addEventListener("load", doStartup, false);
+function hideScreenButtonChoiceFullScreen() {
+  document.getElementById('full-screen-btn').style.visibility = 'hidden';
+  document.getElementById('normal-screen-btn').style.visibility = 'hidden';
+  document.getElementById('screen-mode-top-btn').style.visibility = 'visible';
+  };
+  
 
-function doStartup(event) {
-  document.fullscreenElement = document.fullscreenElement || document.mozFullscreenElement
-    || document.msFullscreenElement || document.webkitFullscreenDocument;
-  document.exitFullscreen = document.exitFullscreen || document.mozExitFullscreen
-    || document.msExitFullscreen || document.webkitExitFullscreen;
-
-  document.addEventListener("click", handleKeypress, false);
+function hideScreenButtonChoiceNormalScreen() {
+  document.getElementById('full-screen-btn').style.visibility = 'hidden';
+  document.getElementById('normal-screen-btn').style.visibility = 'hidden';
+  document.getElementById('screen-mode-top-btn').style.border = '3px solid red';
+  document.getElementById('screen-mode-top-btn').style.visibility = 'visible';
 }
-
-function handleKeypress(event) {
-  if (event.keyCode === 13) {
-    toggleFullscreen();
-  }
-}
-
 
 function toggleFullscreen() {
   let elem = document.documentElement;
 
-  elem
-    .requestFullscreen({ navigationUI: "show" })
-    .then(() => { })
-    .catch((err) => {
+  if (!document.fullscreenElement) {
+    document.getElementById('screen-mode-top-btn').style.border = '3px solid green';
+    elem.requestFullscreen().catch((err) => {
       alert(
-        `An error occurred while trying to switch into fullscreen mode: ${err.message} (${err.name})`
+        `Error attempting to enable fullscreen mode: ${err.message} (${err.name})`
       );
+      
     });
-}
-function hideButton() {
-
-  document.getElementById('fullscreen-btn').style.visibility = 'hidden';
-
+  } else {
+    document.exitFullscreen();
+    document.getElementById('screen-mode-top-btn').style.border = '3px solid red';
+  }
 }
