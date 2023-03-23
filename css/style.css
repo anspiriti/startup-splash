@@ -6,32 +6,38 @@
 }
 
 body{
-  position: absolute;
-  top: 33%;
+  color: whitesmoke;
+}
+
+.logo{
+  display: flex;
+  flex-flow: column wrap;
   width: 100%;
   text-align: center;
-  color: whitesmoke;
+}
+
+.logo-margin{
+  margin: 8px;
 }
 
 .text-logo {
   font-family: Freestyle Script, Freestyle Script_MSFontService, sans-serif;
-  font-size: 55px;
-  text-align: center;
+  font-size:550%;
   color: #CD840D;
-  letter-spacing: .44em;
-  line-height: 33px;
+  line-height: 77%;
+  margin: 5px;
 }
 
 .sub-logo{
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  letter-spacing:normal;
-  line-height: normal;
-  font-size: .5em;
-  font-weight: 100;
+  font-size: 225%;
+  font-weight:lighter;
+  margin: 5px;
 }
 
 .fullscreen-btn {
   border: 3.8px solid  #CD840D;
-  color: whitesmoke
+  color: whitesmoke;
+  padding: 5.5px;
 }
