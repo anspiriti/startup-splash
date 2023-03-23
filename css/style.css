@@ -9,6 +9,25 @@ body{
   color: whitesmoke;
 }
 
+div.sticky {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+.screen-mode-top{
+  display: flex;
+  flex-flow: row wrap;
+  visibility: hidden;
+  margin: 1em;
+}
+
+.screen-mode-top-btn{
+    border: 3.8px solid #CD840D;
+    color: whitesmoke;
+   
+}
+
 .logo{
   display: flex;
   flex-flow: column wrap;
@@ -24,6 +43,7 @@ body{
   font-size:440%;
   color: #CD840D;
   line-height: 77%;
+  margin-left: -.7rem;
 }
 
 .sub-logo{
@@ -33,7 +53,9 @@ body{
   font-weight:lighter;
 }
 
-.fullscreen-btn {
+.screen-btn {
   border: 3.8px solid  #CD840D;
   color: whitesmoke;
+  width: 10em;
+  margin: .5em;
 }
