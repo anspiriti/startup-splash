@@ -1,45 +1,38 @@
-<!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="text/css" rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500&display=swap" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="./css/style.css">
-    <script type="text/javascript" src="./js/script.js" async defer></script>
-  </head>
-  <body>
-    <div class="sticky w3-container screen-mode-top">
-      <div class="w3-row w3-display-topright">
-          <input id="screen-mode-top-btn" class="w3-button w3-small w3-round-xxlarge" type="button" value="Full Screen"
-            onclick="toggleFullscreen();">
-      </div>
-    </div>
-    <div class="w3-display-middle w3-center logo">
-        <div class="w3-row logo-margin">
-          <h1 class="w3-mobile text-logo">The Anspiriti Project</h1>
-        </div>
-        <div class="w3-row logo-margin">
-          <h2 class="w3-mobile sub-logo">Accelerating Humanity</h2>
-        </div>
-        <div class="w3-row logo-margin">
-          <input id="full-screen-btn" class="w3-button w3-large w3-round-xxlarge screen-btn" type="button" value="Full Screen"
-            onclick="toggleFullscreen();hideScreenButtonChoiceFullScreen()">
-          <input id="normal-screen-btn" class="w3-button w3-large w3-round-xxlarge screen-btn" type="button"
-            value="Normal Screen" onclick="hideScreenButtonChoiceNormalScreen()">
-      </div>
-    </div>
-    <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link type="text/css" rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100&display=swap"
+  rel="stylesheet">
+</head>
+<body style="display: flex; justify-content: center; align-items: center; background-color: #0f0f19;">
+<svg width="260px" height="300px" xmlns="http://www.w3.org/2000/svg" style="background-color: #0f0f19 ">
+  <defs>
+    <radialGradient id="RadialGradient1">
+      <stop offset="8%" stop-color="#D8780E" />
+      <stop offset="100%" stop-color="#0f0f19" />
+    </radialGradient>
+    <radialGradient id="RadialGradient2">
+      <stop offset="89%" stop-color="#0f0f19" />
+      <stop offset="94%" stop-color="#D8780E" />
+      <stop offset="100%" stop-color="#0f0f19" />
+    </radialGradient>
+    <linearGradient id="name" gradientTransform="rotate(90)">
+      <stop offset="10%" stop-color="#0f0f19" />
+      <stop offset="55%" stop-color="#D8780E" />
+      <stop offset="97%" stop-color="#0f0f19" />
+    </linearGradient>
+  </defs>
+    <circle cx="50%" cy="10px" r="150" fill="url(#RadialGradient2)"/>
+    <circle cx="50%" cy="px" r="150" fill="#0f0f19" />
+    <circle cx="50%" cy="111px" r="33" stroke="#0f0f19" stroke-width="8" fill="url(#RadialGradient1)" />
+    <text x="50%" y="180px" fill="url(#name)" dominant-baseline="middle" text-anchor="middle" style="font:44px Arial, sans-serif; letter-spacing:4">Anspiriti</text> 
+    <text x="50%" y="212px" fill="whitesmoke" dominant-baseline="middle" text-anchor="middle" style="font:14px M PLUS 1, sans-serif; color:whitesmoke; letter-spacing:2; font-weight:100;">Accelerating Humanity</text>
+</svg>
+</body>
 </html>
