@@ -28,7 +28,8 @@
 
 </head>
 <header class="bg-black p-2 m-0 mb-2 text-center text-warning border-bottom border-danger">
-  <div><img style="border-radius: 50%;" src="tummy-transparent.png" alt="" srcset=""></div>
+  <div><img style="border-radius: 50%;" src=
+    "https://lh4.googleusercontent.com/lpRYLxIcWeCnX503wRPvkt-3lg-cpIAywIqga21jz0mIYrGvQVRgo93C6NK3xioAyVzU3zrRRLiKBCB4fzLHcLuEioj2JnTYOglq9EBKHCigjLfMY4eRLdjaDFQmXVYkkg=w1280" alt="" srcset=""></div>
   <h1 class="">Holy Feast</h1>
   <h2>Customer Experience Survey</h2>
 </header>
@@ -69,7 +70,7 @@
       <div class="mt-3">
         <label class="text-warning">Name</label>
         <div class="control">
-          <input class="input" type="email" name="Name" />
+          <input class="input" type="text" name="Name" />
         </div>
       </div>
       <div class="d-flex justify-content-between">
@@ -289,7 +290,7 @@
               <label for="end-name">
                 Name
                 </label>
-                <input class="w-50 rounded" type="text" id="end-name" name="End-Name">
+                <input class="w-50 rounded" type="text" id="end-name" name="End Name">
               <label for="end-email">
                 Email
                 </label>
@@ -312,7 +313,6 @@
 
   <script>
     var currentPage = 1;
-
     function showPage(page) {
       for (var i = 1; i <= 10; i++) { // Assuming you have maximum of 5 pages
         var pageElement = document.getElementById('page' + i);
@@ -382,6 +382,125 @@
 
     // Show the first page initially
     showPage(1);
+  </script>
+  <script>
+    document.getElementById("form").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent the default form submission
+      document.getElementById("message").textContent = "Submitting..";
+      document.getElementById("message").style.display = "block";
+      document.getElementById("submit-button").disabled = true;
+
+      // Collect the form data
+      var formData = new FormData(this);
+      var keyValuePairs = [];
+      for (var pair of formData.entries()) {
+        keyValuePairs.push(pair[0] + "=" + pair[1]);
+      }
+
+      var formDataString = keyValuePairs.join("&");
+
+      // Send a POST request to your Google Apps Script
+      fetch(
+        "https://script.google.com/macros/s/AKfycbzC0whZFfn1-d8oif3lEcrwNIljTGCn_fB0AWEvMwBwzXtWqygW8bMMgst4Iej4nzsm/exec",
+        {
+          redirect: "follow",
+          method: "POST",
+          body: formDataString,
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
+        }
+      )
+        .then(function (response) {
+          // Check if the request was successful
+          if (response) {
+            return response; // Assuming your script returns JSON response
+          } else {
+            throw new Error("Failed to submit the form.");
+          }
+        })
+        .then(function (data) {
+          // Display a success message
+          document.getElementById("message").textContent =
+            "Responses submitted successfully! You can now close this page";
+          document.getElementById("message").style.display = "block";
+          document.getElementById("message").style.backgroundColor = "green";
+          document.getElementById("message").style.color = "beige";
+          document.getElementById("submit-button").disabled = false;
+          document.getElementById("form").reset();
+
+          setTimeout(function () {
+            document.getElementById("message").textContent = "";
+            document.getElementById("message").style.display = "none";
+          }, 2600);
+        })
+        .catch(function (error) {
+          // Handle errors, you can display an error message here
+          console.error(error);
+          document.getElementById("message").textContent =
+            "An error occurred while submitting the form.";
+          document.getElementById("message").style.display = "block";
+        });
+    });
+  </script><script>
+    document.getElementById("form").addEventListener("submit", function (e) {
+      e.preventDefault(); // Prevent the default form submission
+      document.getElementById("message").textContent = "Submitting..";
+      document.getElementById("message").style.display = "block";
+      document.getElementById("submit-button").disabled = true;
+
+      // Collect the form data
+      var formData = new FormData(this);
+      var keyValuePairs = [];
+      for (var pair of formData.entries()) {
+        keyValuePairs.push(pair[0] + "=" + pair[1]);
+      }
+
+      var formDataString = keyValuePairs.join("&");
+
+      // Send a POST request to your Google Apps Script
+      fetch(
+        "https://script.google.com/macros/s/AKfycbywgDKez-C7NWuPXj96qYdo7qFqqXyU4o2P7Na5tFA/dev",
+        {
+          redirect: "follow",
+          method: "POST",
+          body: formDataString,
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
+        }
+      )
+        .then(function (response) {
+          // Check if the request was successful
+          if (response) {
+            return response; // Assuming your script returns JSON response
+          } else {
+            throw new Error("Failed to submit the form.");
+          }
+        })
+        .then(function (data) {
+          // Display a success message
+          document.getElementById("message").textContent =
+            "Responses submitted successfully! You can now close this page";
+          document.getElementById("message").style.display = "block";
+          document.getElementById("message").style.backgroundColor = "green";
+          document.getElementById("message").style.color = "beige";
+          document.getElementById("submit-button").disabled = false;
+          document.getElementById("form").reset();
+
+          setTimeout(function () {
+            document.getElementById("message").textContent = "";
+            document.getElementById("message").style.display = "none";
+          }, 2600);
+        })
+        .catch(function (error) {
+          // Handle errors, you can display an error message here
+          console.error(error);
+          document.getElementById("message").textContent =
+            "An error occurred while submitting the form.";
+          document.getElementById("message").style.display = "block";
+        });
+    });
   </script>
 </body>
 
