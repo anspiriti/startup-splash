@@ -1,1 +1,795 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="auto">
+
+<head>
+  <title>Mission: Meltdown</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik+Glitch+Pop&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+    
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
+
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
+
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+
+    .badge>a {
+      color: inherit;
+    }
+
+
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+
+
+    /* ADAM */
+
+    body {
+      font-family: "Rubik Glitch Pop", system-ui;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    p,
+    li,
+    div {
+      font-family: "Rubik Glitch Pop", system-ui;
+    }
+
+    p {
+      font-size: 18px;
+    }
+
+    .quote {
+      max-width: 80%;
+      margin: 20px auto;
+      font-family: serif
+    }
+
+    .you_chose_time {
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 12px;
+    }
+
+
+    @media screen and (min-width: 1024px) {
+      .container {
+        max-width: 760px !important;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+
+</head>
+
+<body class="bg-body-tertiary">
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
+
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+          aria-pressed="true">
+          <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em">
+            <use href="#circle-half"></use>
+          </svg>
+          Auto
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+
+
+  <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation"
+    style="background-image: url(https://atlasmissionapp.com/img/50x50_BLUE_TEXTURE.png) !important;">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Parents Hub</a>
+      <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">All Programs</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">My Settings</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">My Values</a></li>
+              <li><a class="dropdown-item" href="#">Parenting Style</a></li>
+              <li><a class="dropdown-item" href="#">My Kids</a></li>
+              <li><a class="dropdown-item" href="#">User & Password</a></li>
+            </ul>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+
+  <div class="nav-scroller bg-body shadow-sm">
+    <nav class="nav" aria-label="Secondary navigation">
+      <a class="nav-link active" aria-current="page" href="#">Mission Meltdown</a>
+      <a class="nav-link" href="#">
+        Tips
+        <span class="badge text-bg-light rounded-pill align-text-bottom">27</span>
+      </a>
+      <a class="nav-link" href="#">Emergency Quiz</a>
+      <a class="nav-link" href="#">Lessons</a>
+      <a class="nav-link" href="#">Bonuses</a>
+    </nav>
+  </div>
+
+  <main class="container">
+    <div class="d-flex align-items-center p-3 my-3 text-white bg-purple rounded shadow-sm"
+      style="background-image: url(https://atlasmissionapp.com/img/50x50_BLUE_TEXTURE.png) !important;">
+      <img class="me-3" src="../img/atlasmissionlogo_smaller.png" alt="" width="48" height="38">
+
+      <div class="lh-1">
+        <h1 class="h6 mb-0 text-white lh-1">Mission: Meltdown</h1>
+        <small>Let's go!</small>
+      </div>
+    </div>
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+
+      <h6 class="border-bottom pb-2 mb-0">Day 3: Planning your conversations.</h6>
+      <div class="bg-dark text-white fs-4">
+        <br />
+
+        <p>Welcome to day 3!</p>
+
+        <p>Today we're going to plan out your daily conversations with your child.</p>
+
+        <p>The idea is to create a list of questions and ideas to talk about with your kids on the way to kindergarten
+          or school.</p>
+
+        <p>This will strengthen your bond, which is cool, but more importantly, it's an opportunity to equip your kid
+          with tools to use when the next meltdown comes - or even prevent it.</p>
+
+        <p>It's also meant to create a channel of communication between the two of you that can be used when a meltdown
+          comes.</p>
+
+        <p></p>
+
+        <p>Ready? Let's start. This should take about 3 minutes.</p>
+
+      </div>
+      <hr>
+      <small class="d-block text-end mt-3">
+        <button class="btn btn-outline-primary d-inline-flex align-items-center btn-next-step" type="button">
+          Let's Start! &nbsp;
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </small>
+    </div><!--/bg-body-->
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+      <div class="text-body-secondary">
+        <!-- task 02 --> <!-- task 02 --> <!-- task 02 --> <!-- task 02 --> <!-- task 02 -->
+        <h6 class="border-bottom pb-2 mb-0">TASK 1: Pick your topics.</h6>
+
+        <br />
+
+        <p>Here are a bunch of topics we've pre-picked for you to choose from. Pick the ones you like the most, and get
+          rid of the ones your don't.</p>
+
+        <p>After picking your favorite topics, we'll create a list for you - with specific questions and instructions
+          for the next couple of mornings, and each morning you can look at it and pick one topic to discuss.</p>
+
+        <p>Remove the ones you don't see yourself using. Like the ones you most likely think you'll use - we'll make
+          sure they appear on top of your list. The rest? keep them, who knows...</p>
+
+        <style type="text/css">
+          .the_topics .btn {
+            border-radius: 80px;
+            padding: 10px 10px;
+            width: 40px;
+            height: 40px;
+            margin: 5px;
+          }
+
+          .the_topics .badge {
+            opacity: 0.6;
+            margin: 2px 0px;
+            padding: 5px 8px !important;
+            font-weight: normal !important;
+            font-size: 10px !important;
+          }
+
+          .the_topics .btn-outline-primary {
+            border: 1px solid pink !important;
+            color: pink !important;
+          }
+
+          .homescreen_inst {
+            max-width: 30%;
+            margin: 0 auto;
+            display: block;
+            border-radius: 12px;
+            box-shadow: 0 5px 5px -4px;
+            border: 1px solid
+          }
+        </style>
+        <div class="the_topics">
+
+
+          <div class="list-group" id="list-group">
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Secret Communication Code:</div>
+                Invent a Secret Communication Code with your child. Choose symbols, gestures, or phrases that signify
+                specific emotions or needs. This becomes a playful yet effective way for your child to communicate
+                without explicitly verbalizing their feelings.
+
+                <div class="mt-2">
+                  <span class="badge bg-info">Coping Mechanisms</span>
+                  <span class="badge bg-secondary">Positive Reinforcement</span>
+                  <span class="badge bg-dark">Problem-Solving</span>
+                  <!-- Add more tags as needed -->
+                </div>
+              </div>
+              <div>
+                <button class="btn btn-outline-primary btn-sm me-1 like-btn"><i
+                    class="fa-solid fa-heart fa-beat"></i></button>
+                <button class="btn btn-outline-danger btn-sm remove-btn"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </a>
+          </div>
+          <!-- Repeat or loop to generate more list items --><br />
+
+          <div class="list-group" id="list-group">
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Empathy-building Exercise:</div>
+                Share a personal story about a time when you felt a strong emotion and discuss how you coped with it.
+                Encourage your child to share their experiences, fostering empathy and understanding.
+                <div class="mt-2">
+                  <span class="badge bg-info">Coping Mechanisms</span>
+                  <span class="badge bg-secondary">Positive Reinforcement</span>
+                  <span class="badge bg-dark">Problem-Solving</span>
+                  <!-- Add more tags as needed -->
+                </div>
+              </div>
+              <div>
+                <button class="btn btn-outline-primary btn-sm me-1 like-btn"><i
+                    class="fa-solid fa-heart fa-beat"></i></button>
+                <button class="btn btn-outline-danger btn-sm remove-btn"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </a>
+          </div>
+          <!-- Repeat or loop to generate more list items --><br />
+
+          <div class="list-group" id="list-group">
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">The Emoji Challenge:</div>
+                Show your kid 5 emojis and let them detect the emotion, and discuss ("when do you feel like this?").
+                Don't worry - We'll pick the emojis for you :-)
+                <div class="mt-2">
+                  <span class="badge bg-info">Positive Reinforcement</span>
+                  <span class="badge bg-dark">Problem-Solving</span>
+                  <span class="badge bg-info">Coping Mechanisms</span>
+                  <!-- Add more tags as needed -->
+                </div>
+              </div>
+              <div>
+                <button class="btn btn-outline-primary btn-sm me-1 like-btn"><i
+                    class="fa-solid fa-heart fa-beat"></i></button>
+                <button class="btn btn-outline-danger btn-sm remove-btn"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </a>
+          </div>
+          <!-- Repeat or loop to generate more list items --><br />
+
+          <div class="list-group" id="list-group">
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Gratitude Game:</div>
+                Let's each think of something we're grateful for today. / Let's think of something we're grateful for
+                that starts with each letter of the alphabet."
+                <div class="mt-2">
+                  <span class="badge bg-info">Positive Reinforcement</span>
+                  <span class="badge bg-secondary">Coping Mechanisms</span>
+                  <span class="badge bg-dark">Problem-Solving</span>
+                  <!-- Add more tags as needed -->
+                </div>
+              </div>
+              <div>
+                <button class="btn btn-outline-primary btn-sm me-1 like-btn"><i
+                    class="fa-solid fa-heart fa-beat"></i></button>
+                <button class="btn btn-outline-danger btn-sm remove-btn"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </a>
+          </div>
+          <!-- Repeat or loop to generate more list items --><br />
+
+          <div class="list-group" id="list-group">
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Practice big breathing:</div>
+                Let's practice our deep breathing. Take a big breath in through your nose, hold it for a few seconds,
+                and then let it out slowly through your mouth. This is a great way to calm down when you're feeling
+                upset."
+                <div class="mt-2">
+                  <span class="badge bg-info">Coping Mechanisms</span>
+                  <span class="badge bg-dark">Problem-Solving</span>
+                  <!-- Add more tags as needed -->
+                </div>
+              </div>
+              <div>
+                <button class="btn btn-outline-primary btn-sm me-1 like-btn"><i
+                    class="fa-solid fa-heart fa-beat"></i></button>
+                <button class="btn btn-outline-danger btn-sm remove-btn"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </a>
+          </div>
+          <!-- Repeat or loop to generate more list items --><br />
+
+          <div class="list-group" id="list-group">
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Psalms:</div>
+                Something from the Bible
+                <div class="mt-2">
+                  <span class="badge bg-info">Positive Reinforcement</span>
+                  <span class="badge bg-dark">Problem-Solving</span>
+                  <!-- Add more tags as needed -->
+                </div>
+              </div>
+              <div>
+                <button class="btn btn-outline-primary btn-sm me-1 like-btn"><i
+                    class="fa-solid fa-heart fa-beat"></i></button>
+                <button class="btn btn-outline-danger btn-sm remove-btn"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </a>
+          </div>
+          <!-- Repeat or loop to generate more list items --><br />
+
+          <div class="list-group" id="list-group">
+            <a href="#" class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+              <div class="ms-2 me-auto">
+                <div class="fw-bold">Psalms:</div>
+                Something from the Bible?
+                <div class="mt-2">
+                  <span class="badge bg-info">Modeling Behavior</span>
+                  <span class="badge bg-dark">Problem-Solving</span>
+                  <span class="badge bg-dark">Positive Reinforcement</span>
+                  <!-- Add more tags as needed -->
+                </div>
+              </div>
+              <div>
+                <button class="btn btn-outline-primary btn-sm me-1 like-btn"><i
+                    class="fa-solid fa-heart fa-beat"></i></button>
+                <button class="btn btn-outline-danger btn-sm remove-btn"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+            </a>
+          </div>
+          <!-- Repeat or loop to generate more list items --><br />
+
+        </div>
+
+
+      </div>
+      <hr>
+      <small class="d-block text-end mt-3">
+        <button class="btn btn-outline-primary d-inline-flex align-items-center btn-next-step" type="button">
+          Next! &nbsp;
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </small>
+    </div><!--/bg-body-->
+
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+      <div class="text-body-secondary">
+
+        <!-- task 02 --> <!-- task 02 --> <!-- task 02 --> <!-- task 02 --> <!-- task 02 -->
+        <h6 class="border-bottom pb-2 mb-0">TASK 3: Save your list.</h6>
+
+        <br />
+        <p>Great! Your list will be saved here, you can either <a href="">bookmark it</a>, <a href="">add it to your
+            phone's homepage</a>, or copy it to your phone by <a href="">clicking here</a> and sharing via text or
+          email.</p>
+
+        <img class="homescreen_inst" src="https://cdn.filestackcontent.com/SHsZNir2QeCaIHpQqv93" />
+
+        <br /><br /><br /><br />
+
+      </div>
+      <hr>
+      <small class="d-block text-end mt-3">
+        <button class="btn btn-outline-primary d-inline-flex align-items-center btn-next-step" type="button">
+          Start DAY 2! &nbsp;
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </small>
+
+    </div><!--/bg-body-->
+
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+      <div class="text-body-secondary">
+
+        <!-- task 02 --> <!-- task 02 --> <!-- task 02 --> <!-- task 02 --> <!-- task 02 -->
+        <h6 class="border-bottom pb-2 mb-0">TASK 4: Reward Yourself.</h6>
+
+        <br /><br /><br /><br />
+
+        <h1 style="text-align:center;">🥳</h1>
+        <p style="text-align:center;">You did good!</p>
+
+        <p style="text-align:center;">You're ready for day 2!</p>
+
+
+        <br /><br /><br /><br />
+
+      </div>
+      <hr>
+      <small class="d-block text-end mt-3">
+        <a class="btn btn-outline-primary d-inline-flex align-items-center" type="button" href="?l=4">
+          Start DAY 4! &nbsp;
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </small>
+
+    </div><!--/bg-body-->
+
+
+
+
+
+
+
+
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+
+
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+      <h6 class="border-bottom pb-2 mb-0">Recent updates</h6>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+          xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#007bff" /><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text>
+        </svg>
+        <p class="pb-3 mb-0 small lh-sm border-bottom">
+          <strong class="d-block text-gray-dark">@username</strong>
+          Some representative placeholder content, with some information about this user. Imagine this being some sort
+          of status update, perhaps?
+        </p>
+      </div>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+          xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#e83e8c" /><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text>
+        </svg>
+        <p class="pb-3 mb-0 small lh-sm border-bottom">
+          <strong class="d-block text-gray-dark">@username</strong>
+          Tag badges with "x" from here:
+          https://getbootstrap.com/docs/5.3/examples/badges/
+        </p>
+
+
+
+
+
+      </div>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+          xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#6f42c1" /><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text>
+        </svg>
+        <p class="pb-3 mb-0 small lh-sm border-bottom">
+          <strong class="d-block text-gray-dark">@username</strong>
+          This user also gets some representative placeholder content. Maybe they did something interesting, and you
+          really want to highlight this in the recent updates.
+        </p>
+      </div>
+      <small class="d-block text-end mt-3">
+        <a href="#">All updates</a>
+      </small>
+    </div>
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+      <h6 class="border-bottom pb-2 mb-0">Suggestions</h6>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+          xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#007bff" /><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text>
+        </svg>
+        <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+          <div class="d-flex justify-content-between">
+            <strong class="text-gray-dark">Full Name</strong>
+            <a href="#">Follow</a>
+          </div>
+          <span class="d-block">@username</span>
+        </div>
+      </div>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+          xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#007bff" /><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text>
+        </svg>
+        <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+          <div class="d-flex justify-content-between">
+            <strong class="text-gray-dark">Full Name</strong>
+            <a href="#">Follow</a>
+          </div>
+          <span class="d-block">@username</span>
+        </div>
+      </div>
+      <div class="d-flex text-body-secondary pt-3">
+        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32"
+          xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32"
+          preserveAspectRatio="xMidYMid slice" focusable="false">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#007bff" /><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text>
+        </svg>
+        <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+          <div class="d-flex justify-content-between">
+            <strong class="text-gray-dark">Full Name</strong>
+            <a href="#">Follow</a>
+          </div>
+          <span class="d-block">@username</span>
+        </div>
+      </div>
+      <small class="d-block text-end mt-3">
+        <a href="#">All suggestions</a>
+      </small>
+    </div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <script src="https://getbootstrap.com/docs/5.3/examples/offcanvas-navbar/offcanvas-navbar.js"></script>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+  integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+
+  $(function () {
+
+
+    $('.bg-body').slice(2).hide();
+    $('.bg-body-show').delay(80).show();
+    $('.btn-next-step').click(function () {
+      var currentDiv = $(this).closest('.bg-body');
+      currentDiv.hide();
+      currentDiv.next('.bg-body').fadeIn();
+      $(window).scrollTop(0);
+    });
+
+
+    $('.customize_quiz_box').slice(1).hide();
+    $('.btn-next-quiz-step').click(function () {
+      var currentDiv = $(this).closest('.customize_quiz_box');
+      currentDiv.hide();
+      currentDiv.next('.customize_quiz_box').fadeIn();
+      $(window).scrollTop(0);
+    });
+    $('.age_click').click(function () {
+      var currentDiv = $(this).closest('.customize_quiz_box');
+      currentDiv.hide();
+      currentDiv.next('.customize_quiz_box').fadeIn();
+      $(window).scrollTop(0);
+    });
+
+    $('.you_chose_time').hide();
+    $('.the-cal-click').click(function () {
+      $(this).slideUp('slow').hide();
+      $('.you_chose_time').fadeIn();
+      return false;
+    });
+
+    $('.list-group').on('click', '.like-btn', function (e) {
+      e.preventDefault();
+      $(this).closest('.list-group-item').toggleClass('active');
+    });
+
+    $('.list-group').on('click', '.remove-btn', function (e) {
+      e.preventDefault();
+      $(this).closest('.list-group-item').slideUp('fast');
+    });
+
+    $('.age_click').click(function () {
+
+    });
+    $('.customize_quiz_box .btn').click(function () {
+      $(this).toggleClass('active');
+    });
+
+    /* TRACK EVERYTHING TO GA! (Fix broken code)
+    $('body').on('click', '*', function(e) {
+      var element = $(this);
+  	
+      // Construct an event label based on the element's attributes
+      var label = element.attr('id') || element.attr('class') || element.prop('tagName');
+  	
+      // Send the event to GA4
+      gtag('event', 'click', {
+        'event_category': 'All Clicks',
+        'event_label': label
+    });
+    */
+
+
+  });
+
+</script>
+
+
+</html>
 
